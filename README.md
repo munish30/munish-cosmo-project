@@ -4,9 +4,26 @@ This is the project assignment where the top level folder named cosmocloud-deplo
 
 ## Tools/Utilities
 This project assumes some tools to be installed previously before proceeding any further. Like:
-- Minikube
-- Kubectl(not an hard requirement but necesssary for post-deployment verfications)
-- Container Engine(Requirement for minikube)
+- Kubernetes Cluster (Minikube in this case)
+- Kubectl (not an hard requirement but necesssary for post-deployment verfications)
+- Container Engine (Requirement for minikube)
+
+## Navigating through the files
+```bash
+munish-cosmo-project
+├── cosmocloud-deploy
+│   ├── Chart.yaml
+│   ├── templates
+│   │   ├── backend-deployment.yaml
+│   │   ├── backend-service.yml
+│   │   ├── cosmo-configmap.yml
+│   │   ├── frontend-deployment.yml
+│   │   ├── frontend-service.yml
+│   │   ├── redis-deployment.yml
+│   │   └── redis-service.yml
+│   └── values.yaml
+└── README.md
+```
 
 ## Installation
 
@@ -18,7 +35,12 @@ helm install testapp cosmocloud-deploy
 The "testapp" is the name of the release that is given in the assignment. It can be changed to create a release with any name.
 
 ## Verifying the installation
-
+Verifying deployments and services:
+```bash
+kubectl get deployments
+kubectl get service
+```
+Once the deployment is running:
 ```bash
 minikube service frontend-svc
 ```
