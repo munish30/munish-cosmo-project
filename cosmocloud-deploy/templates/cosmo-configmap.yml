@@ -4,4 +4,4 @@ metadata:
   name: cosmo-configmap
 data:
   REDIS_URI: redis://redis-svc:6379
-  BACKEND_URL: "http://backend-svc:8000"
+  BACKEND_URL: http://backend-svc:8000
